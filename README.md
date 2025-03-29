@@ -187,7 +187,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👥 Authors
 
 - Wassim EL BAKKOURI (wassim.elbakkouri@yahoo.com)
-- Adnane TOUIYATE (adnane.touiyate@gmail.com)
+- Adnane TOUIYATE (adnanetouiayte11@gmail.com)
 
 ## 🙏 Acknowledgments
 
