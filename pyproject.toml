@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ads_genius_ai"
+version = "0.1.0"
+description = "A FastAPI service for serving Ads Genius LLM model"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    # Web framework dependencies
+    "fastapi==0.115.8",
+    "uvicorn[standard]==0.24.0",
+    "gunicorn==23.0.0",
+    
+    # ML dependencies
+    "torch==2.6.0",
+    "transformers==4.48.2",
+    "peft==0.14.0",
+    "accelerate==0.27.2",
+    "bitsandbytes==0.41.3",
+    "numexpr==2.10.2",
+    "triton==3.2.0",
+    
+    # Utilities and configuration
+    "pydantic==2.10.6",
+    "pydantic-settings==2.7.1",
+    "python-dotenv==1.0.1",
+    "tenacity==9.0.0",
+    "scipy==1.15.1",
+    
+    # Observability
+    "structlog==25.1.0",
+    "prometheus-client==0.21.1",
+    
+    # Redis
+    "redis==5.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    #"pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "ruff>=0.0.270",
+]
+
+[tool.setuptools]
+packages = ["app", "logs"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+select = ["E", "F", "B", "I"] 

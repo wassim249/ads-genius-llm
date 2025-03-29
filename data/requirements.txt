@@ -1,0 +1,26 @@
+# Azure OpenAI and LangChain dependencies
+langchain-openai==0.1.5
+langchain-core==0.1.15
+openai==1.12.0
+
+# Data validation and settings management
+pydantic==2.10.6
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# Utilities
+tenacity==9.0.0
+structlog==25.1.0
+rich==13.7.0
+
+# File handling and data processing
+jsonschema==4.20.0
+python-json-logger==2.0.7
+
+# CLI tools
+typer==0.9.0
+colorama==0.4.6
+
+# Testing dependencies (optional)
+pytest==7.4.3
+pytest-cov==4.1.0 

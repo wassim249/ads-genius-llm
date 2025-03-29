@@ -1,0 +1,33 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: check-merge-conflict  # Prevents merge conflicts
+    -   id: trailing-whitespace  # Removes trailing whitespace at the end of lines
+        args: [--markdown-linebreak-ext=md]
+    -   id: end-of-file-fixer  # Ensures files end with a newline
+    -   id: check-yaml  # Validates YAML syntax
+        args: [--unsafe]
+    -   id: check-added-large-files  # Prevents giant files from being committed
+        args: [--maxkb=500]
+    -   id: check-json  # Validates JSON syntax
+    -   id: check-toml  # Validates TOML syntax
+    -   id: detect-private-key  # Checks for committed private keys
+    -   id: mixed-line-ending  # Ensures consistent line endings
+    -   id: requirements-txt-fixer  # Sorts requirements.txt files
+    -   id: detect-private-key  # Detects private keys in files
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.6
+    hooks:
+    -   id: ruff  # Fast Python linter, applies auto-fixes
+        args: [ --fix ,--exit-non-zero-on-fix ,--config=ruff.toml]
+    -   id: ruff-format  # Fast Python formatter, similar to black
+
+-   repo: https://github.com/pycqa/isort
+    rev: "5.12.0"
+    hooks:
+    -   id: isort
+        args: [ --profile=black ] # Fast Python linter, applies auto-fixes
